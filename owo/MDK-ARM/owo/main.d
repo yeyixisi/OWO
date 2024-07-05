@@ -35,3 +35,4 @@ owo\main.o: ../Core/Inc/gpio.h
 owo\main.o: ..\oWo\led.h
 owo\main.o: ..\oWo\inte.h
 owo\main.o: ..\oWo\lcd.h
+owo\main.o: ..\oWo\lcd_CN.h

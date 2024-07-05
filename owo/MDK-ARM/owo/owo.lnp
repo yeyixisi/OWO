@@ -24,6 +24,7 @@
 "owo\inte.o"
 "owo\led.o"
 "owo\lcd.o"
+"owo\lcd_cn.o"
 --strict --scatter "owo\owo.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
