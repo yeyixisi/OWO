@@ -98,51 +98,68 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	int cnt=0,t=0;
-	char txet[30];
 	LCD_Init();
-	LCD_Clear(Red);
-	LCD_SetBackColor(Blue);
-	LCD_SetTextColor(White);
+	LCD_Clear(White);
+	LCD_SetBackColor(White);
+	LCD_SetTextColor(Black);
 	//LCD_DrawChar(Line0,313,&ZN16x16_Table[0]);
 	cout(Line0,159+16+8);
-  while (1)
-  {
-		//在每次循环中，代码检查key数组中按键的oOo字段
-		//（这代表按键的短暂按下事件）。根据不同的按键，cnt变量会被增加不同的数值：8、4、2、1
-    if(key[0].oOo==1){
-			cnt+=8;
+	char str[]="DongJueShuo                  ";
+  int now=15,f=1,oOooO=1,OoOOo=1;
+	while(1){
+		HAL_Delay(500);
+		if(key[0].oOo==1){
+			f=1;
 			key[0].oOo=0;
 		}
 		else if(key[1].oOo==1){
-			cnt+=4;key[1].oOo=0;
+			f=2;
+			key[1].oOo=0;
 		}
 		else if(key[2].oOo==1){
-			cnt+=2;key[2].oOo=0;
+			f=3;
+			key[2].oOo=0;
 		}
 		else if(key[3].oOo==1){
-			cnt+=1;key[3].oOo=0;
+			f=4;
+			key[3].oOo=0;
 		}
-		else if(key[1].lf==1){
-			//如果key[1]的lf字段为1（这代表长按事件），则执行一系列操作：
-
-			//减少cnt的值。
-			//将cnt转换为字符串并显示在LCD上。
-			//设置一个计数器t，并在t达到2时跳出循环
-			cnt-=4;
-			int a=cnt/10,b=cnt%10;
-			ctrl((a<<4)|b);key[1].lf=0;
-			
-			for(int i=10;i>=0;i--){
-				txet[i]=((cnt%10)+'0');
-				cnt/=10;
+		if(f==1){
+			if(now>>7&1)now=now<<1|1;
+			else now=now<<1;
+			ctrl(now);
+			char tmp=str[0];
+			for (int i=0;i<19;i++){
+				str[i]=str[i+1];
 			}
-			LCD_DisplayStringLine(Line8,(uint8_t *)"   asdsdan   ");
-			//LCD_DisplayStringLine(Line6,(uint8_t *)txet);
-			t++;
-			//if(t==2)break;
+			str[19]=tmp;
+			LCD_DisplayStringLine(Line7,(uint8_t*)str);
 		}
-		//LCD_DrawPicture((u8 *)"ovooov");
-  }
+		else if(f==2){
+			if(now&1)now=(now>>1)|(1<<7);
+			else now=now>>1;
+			ctrl(now);
+			char tmp=str[19];
+			for (int i=19;i>=1;i--){
+				str[i]=str[i-1];
+			}
+			str[0]=tmp;
+			LCD_DisplayStringLine(Line7,(uint8_t*)str);
+		}
+		else if(f==4){
+			if(oOooO==1)ctrl(1+4+16+64);
+			else ctrl(2+8+32+128);
+			oOooO^=1;
+		}
+		else if(f==3){
+			if(OoOOo==1)ctrl((1<<8)-1);
+			else ctrl(0);
+			OoOOo^=1;
+			if(OoOOo==1)LCD_DisplayStringLine(Line7,(uint8_t*)str);
+			else LCD_DisplayStringLine(Line7,(uint8_t*)"                        ");
+		}
+	}
+  /* USER CODE END 3 */
 
   /* USER CODE END 3 */
 }
