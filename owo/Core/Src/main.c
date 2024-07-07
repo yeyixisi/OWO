@@ -28,6 +28,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 extern struct keys key[];
+extern uc16 ZN16x16_Table[];
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,10 +100,11 @@ int main(void)
 	int cnt=0,t=0;
 	char txet[30];
 	LCD_Init();
-	LCD_Clear(Blue);
+	LCD_Clear(Red);
 	LCD_SetBackColor(Blue);
 	LCD_SetTextColor(White);
-	cout();
+	//LCD_DrawChar(Line0,313,&ZN16x16_Table[0]);
+	cout(Line0,159+16+8);
   while (1)
   {
 		//在每次循环中，代码检查key数组中按键的oOo字段

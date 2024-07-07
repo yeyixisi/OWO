@@ -7,7 +7,7 @@ owo\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h
 owo\main.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h
 owo\main.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h
 owo\main.o: ../Drivers/CMSIS/Include/core_cm4.h
-owo\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+owo\main.o: D:\OwO\ARM\ARMCC\Bin\..\include\stdint.h
 owo\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
 owo\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 owo\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ owo\main.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 owo\main.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h
 owo\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
 owo\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-owo\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+owo\main.o: D:\OwO\ARM\ARMCC\Bin\..\include\stddef.h
 owo\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h
 owo\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h
 owo\main.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h
