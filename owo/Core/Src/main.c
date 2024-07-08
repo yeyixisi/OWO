@@ -99,10 +99,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	int now=1;
-  while (1)
-  {
-		cout(Line1,319);
+	int now=1,ypos=159;
+	char tmp[]="     202230222023       ";
+  while (1){
+		//LCD_Clear(White);
+		cout(Line1,ypos);
+		ypos-=16;
+		if(ypos<0)ypos=319;
+		LCD_DisplayStringLine(Line7,(uint8_t*)tmp);
+		char t=tmp[19];
+		for(int i=19;i>0;i--)tmp[i]=tmp[i-1];
+		tmp[0]=t;
     /* USER CODE END WHILE */
 		now>>=1;
 		if(now==0)now|=(1<<7);

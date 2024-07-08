@@ -3,9 +3,9 @@
 <title>Static Call Graph - [owo\owo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image owo\owo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6120001: Last Updated: Mon Jul  8 18:24:25 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6120001: Last Updated: Mon Jul  8 18:41:44 2024
 <BR><P>
-<H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        192 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 <P>
@@ -234,7 +234,7 @@ Global Symbols
 <P><STRONG><a name="[c4]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[61]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -537,9 +537,9 @@ Global Symbols
 <P><STRONG><a name="[10]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32g4xx_it.o(.text.EXTI0_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = EXTI0_IRQHandler &rArr; LCD_DisplayStringLine &rArr; LCD_DisplayChar &rArr; LCD_DrawChar &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayStringLine
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctrl
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayStringLine
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
@@ -548,9 +548,9 @@ Global Symbols
 <P><STRONG><a name="[11]"></a>EXTI1_IRQHandler</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32g4xx_it.o(.text.EXTI1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = EXTI1_IRQHandler &rArr; LCD_DisplayStringLine &rArr; LCD_DisplayChar &rArr; LCD_DrawChar &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayStringLine
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctrl
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayStringLine
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
@@ -854,6 +854,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI1_IRQHandler
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[97]"></a>LCD_DrawChar</STRONG> (Thumb, 100 bytes, Stack size 40 bytes, lcd.o(.text.LCD_DrawChar))
@@ -1023,8 +1024,8 @@ Global Symbols
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[62]"></a>main</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+<P><STRONG><a name="[62]"></a>main</STRONG> (Thumb, 176 bytes, Stack size 32 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctrl
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cout
@@ -1032,6 +1033,7 @@ Global Symbols
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM3_Init
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DisplayStringLine
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
