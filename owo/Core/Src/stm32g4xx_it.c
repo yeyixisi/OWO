@@ -21,6 +21,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32g4xx_it.h"
+#include "lcd.h"
+#include "led.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -198,6 +200,51 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32g4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI0_IRQn 0 */
+	LCD_Clear(White);
+	LCD_DisplayStringLine(Line0,(uint8_t*)"   I am a higher level interrupt.    ");
+	int now=1,t=40;
+	while(t--){
+		if(now)ctrl(0xff);
+		else ctrl(0x00);
+		now^=1;
+		HAL_Delay(100);
+	}
+  /* USER CODE END EXTI0_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+  /* USER CODE BEGIN EXTI0_IRQn 1 */
+	LCD_Clear(White);
+  /* USER CODE END EXTI0_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line1 interrupt.
+  */
+void EXTI1_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI1_IRQn 0 */
+	LCD_Clear(White);
+	LCD_DisplayStringLine(Line0,(uint8_t*)"   I am a low-level interrupt.    ");
+	int now=1,t=60;
+	while(t--){
+		ctrl(now);
+		now<<=1;
+		HAL_Delay(100);
+		if(now>>8&1)now=1;
+	}
+  /* USER CODE END EXTI0_IRQn 0 */
+  /* USER CODE END EXTI1_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+  /* USER CODE BEGIN EXTI1_IRQn 1 */
+	LCD_Clear(White);
+  /* USER CODE END EXTI1_IRQn 1 */
+}
 
 /**
   * @brief This function handles TIM3 global interrupt.

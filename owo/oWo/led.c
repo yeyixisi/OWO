@@ -1,4 +1,5 @@
 #include "led.h"
+#define uchar unsigned char
 void ctrl(uchar tmp){
 	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_All,GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOC,tmp<<8,GPIO_PIN_RESET);

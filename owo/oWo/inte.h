@@ -1,6 +1,8 @@
 #ifndef _INTE_
 #define _INTE_
 #include "main.h"
+#define uint unsigned int
+#define uchar unsigned char
 struct keys{
 	uchar jd;//判断执行阶段
 	uchar key_sta;//接受引脚状态

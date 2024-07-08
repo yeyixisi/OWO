@@ -30,7 +30,6 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
 #define uchar unsigned char
-	#define uint unsigned int
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

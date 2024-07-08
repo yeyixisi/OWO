@@ -21,9 +21,9 @@
 #include "main.h"
 #include "tim.h"
 #include "gpio.h"
-#include "led.h"
 #include "inte.h"
 #include "lcd.h"
+#include "led.h"
 #include "lcd_CN.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -91,76 +91,25 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM3_Init();
+	LCD_Init();
+	LCD_Clear(White);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-	HAL_TIM_Base_Start_IT(&htim3);
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	int cnt=0,t=0;
-	LCD_Init();
-	LCD_Clear(White);
-	LCD_SetBackColor(White);
-	LCD_SetTextColor(Black);
-	//LCD_DrawChar(Line0,313,&ZN16x16_Table[0]);
-	cout(Line0,159+16+8);
-	char str[]="DongJueShuo                  ";
-  int now=15,f=1,oOooO=1,OoOOo=1;
-	while(1){
-		HAL_Delay(500);
-		if(key[0].oOo==1){
-			f=1;
-			key[0].oOo=0;
-		}
-		else if(key[1].oOo==1){
-			f=2;
-			key[1].oOo=0;
-		}
-		else if(key[2].oOo==1){
-			f=3;
-			key[2].oOo=0;
-		}
-		else if(key[3].oOo==1){
-			f=4;
-			key[3].oOo=0;
-		}
-		if(f==1){
-			if(now>>7&1)now=now<<1|1;
-			else now=now<<1;
-			ctrl(now);
-			char tmp=str[0];
-			for (int i=0;i<19;i++){
-				str[i]=str[i+1];
-			}
-			str[19]=tmp;
-			LCD_DisplayStringLine(Line7,(uint8_t*)str);
-		}
-		else if(f==2){
-			if(now&1)now=(now>>1)|(1<<7);
-			else now=now>>1;
-			ctrl(now);
-			char tmp=str[19];
-			for (int i=19;i>=1;i--){
-				str[i]=str[i-1];
-			}
-			str[0]=tmp;
-			LCD_DisplayStringLine(Line7,(uint8_t*)str);
-		}
-		else if(f==4){
-			if(oOooO==1)ctrl(1+4+16+64);
-			else ctrl(2+8+32+128);
-			oOooO^=1;
-		}
-		else if(f==3){
-			if(OoOOo==1)ctrl((1<<8)-1);
-			else ctrl(0);
-			OoOOo^=1;
-			if(OoOOo==1)LCD_DisplayStringLine(Line7,(uint8_t*)str);
-			else LCD_DisplayStringLine(Line7,(uint8_t*)"                        ");
-		}
-	}
-  /* USER CODE END 3 */
-
+	int now=1;
+  while (1)
+  {
+		cout(Line1,319);
+    /* USER CODE END WHILE */
+		now>>=1;
+		if(now==0)now|=(1<<7);
+		HAL_Delay(100);
+		ctrl(now);
+    /* USER CODE BEGIN 3 */
+  }
   /* USER CODE END 3 */
 }
 
@@ -218,7 +167,8 @@ void SystemClock_Config(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
+  /* User can add his own imp
+	lementation to report the HAL error return state */
   __disable_irq();
   while (1)
   {
