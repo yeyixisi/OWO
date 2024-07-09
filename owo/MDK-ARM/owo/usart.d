@@ -1,5 +1,4 @@
-owo/stm32g4xx_hal_gpio.o: \
-  ..\Drivers\STM32G4xx_HAL_Driver\Src\stm32g4xx_hal_gpio.c \
+owo/usart.o: ..\Core\Src\usart.c ..\Core\Inc\usart.h ..\Core\Inc\main.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
   ..\Core\Inc\stm32g4xx_hal_conf.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h \
@@ -32,4 +31,7 @@ owo/stm32g4xx_hal_gpio.o: \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim_ex.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h
+  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
+  ..\oWo\led.h ..\Core\Inc\main.h ..\oWo\inte.h ..\oWo\lcd.h \
+  ..\oWo\lcd_CN.h ..\oWo\lcd.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

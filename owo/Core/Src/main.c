@@ -20,11 +20,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
-#include "inte.h"
-#include "lcd.h"
-#include "led.h"
-#include "lcd_CN.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 extern struct keys key[];
@@ -93,6 +91,8 @@ int main(void)
   MX_TIM3_Init();
 	LCD_Init();
 	LCD_Clear(White);
+  //MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -101,6 +101,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	int now=1,ypos=159;
 	char tmp[]="     202230222023       ";
+	char ovo[]="Hello World";
   while (1){
 		//LCD_Clear(White);
 		cout(Line1,ypos);
@@ -110,11 +111,13 @@ int main(void)
 		char t=tmp[19];
 		for(int i=19;i>0;i--)tmp[i]=tmp[i-1];
 		tmp[0]=t;
-    /* USER CODE END WHILE */
 		now>>=1;
-		if(now==0)now|=(1<<7);
-		HAL_Delay(100);
+		if(now==0)now=1<<7;
 		ctrl(now);
+		HAL_UART_Transmit(&huart2,(uint8_t*)ovo,strlen(ovo),100);
+		HAL_Delay(1000);
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -128,6 +131,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Configure the main internal regulator output voltage
   */
@@ -158,6 +162,15 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Initializes the peripherals clocks
+  */
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_USART2;
+  PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK2;
+  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }

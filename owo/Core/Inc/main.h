@@ -29,7 +29,11 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
-#define uchar unsigned char
+#include "led.h"
+#include "inte.h"
+#include "lcd.h"
+#include "lcd_CN.h"
+#include <string.h>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
