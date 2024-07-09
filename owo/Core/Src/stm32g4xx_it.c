@@ -207,19 +207,11 @@ void SysTick_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
-	LCD_Clear(White);
-	LCD_DisplayStringLine(Line0,(uint8_t*)"   I am a higher level interrupt.    ");
-	int now=1,t=40;
-	while(t--){
-		if(now)ctrl(0xff);
-		else ctrl(0x00);
-		now^=1;
-		HAL_Delay(100);
-	}
+	HAL_UART_Transmit(&huart1,(uint8_t*)"202230222023董爵硕",strlen("202230222023董爵硕"),100);
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-	LCD_Clear(White);
+	//LCD_Clear(White);
   /* USER CODE END EXTI0_IRQn 1 */
 }
 

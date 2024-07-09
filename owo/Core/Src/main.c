@@ -91,7 +91,7 @@ int main(void)
   MX_TIM3_Init();
 	LCD_Init();
 	LCD_Clear(White);
-  //MX_USART1_UART_Init();
+  MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
@@ -101,20 +101,27 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	int now=1,ypos=159;
 	char tmp[]="     202230222023       ";
-	char ovo[]="Hello World";
+	char ovo[]="Hello World               ";
+	uint8_t receiveDate[12];
   while (1){
 		//LCD_Clear(White);
 		cout(Line1,ypos);
 		ypos-=16;
 		if(ypos<0)ypos=319;
-		LCD_DisplayStringLine(Line7,(uint8_t*)tmp);
-		char t=tmp[19];
-		for(int i=19;i>0;i--)tmp[i]=tmp[i-1];
-		tmp[0]=t;
-		now>>=1;
-		if(now==0)now=1<<7;
+		//LCD_DisplayStringLine(Line7,(uint8_t*)tmp);
+		//char t=tmp[19];
+		//for(int i=19;i>0;i--)tmp[i]=tmp[i-1];
+		//tmp[0]=t;
+		//now>>=1;
+		//if(now==0)now=1<<7;
+		//ctrl(now);
+		HAL_UART_Receive(&huart1,receiveDate,13,HAL_MAX_DELAY);
+		for(int i=0;i<12;i++)ovo[i]=receiveDate[12-i-1];
+		LCD_DisplayStringLine(Line3,(uint8_t*)ovo);
+		now=0;
+		now|=(ovo[0]-'0');
+		now|=(ovo[1]-'0')<<4;
 		ctrl(now);
-		HAL_UART_Transmit(&huart2,(uint8_t*)ovo,strlen(ovo),100);
 		HAL_Delay(1000);
     /* USER CODE END WHILE */
 

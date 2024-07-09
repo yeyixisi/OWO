@@ -34,6 +34,7 @@ extern "C" {
 #include "lcd.h"
 #include "lcd_CN.h"
 #include <string.h>
+#
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
