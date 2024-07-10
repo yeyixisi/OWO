@@ -2,6 +2,7 @@
 "owo\startup_stm32g431xx.o"
 "owo\main.o"
 "owo\gpio.o"
+"owo\dma.o"
 "owo\tim.o"
 "owo\usart.o"
 "owo\stm32g4xx_it.o"

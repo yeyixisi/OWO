@@ -37,3 +37,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		}
 	}
 }
+extern uint8_t receiveData[100];
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
+	
+		HAL_UART_Transmit_DMA(&huart1,receiveData,Size);
+		uint8_t tmp[20];
+		for(int i=0;i<20;i++){
+			if(i<Size)tmp[i]=receiveData[i];
+			else tmp[i]=' ';
+		}
+		LCD_DisplayStringLine(Line0,tmp);
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,receiveData,100);
+		
+}
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	HAL_UART_Transmit_DMA(&huart1,receiveData,2);
+	HAL_UART_Receive_DMA(&huart1,receiveData,2);
+}

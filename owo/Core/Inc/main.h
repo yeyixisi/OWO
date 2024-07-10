@@ -29,12 +29,15 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
-#include "led.h"
-#include "inte.h"
-#include "lcd.h"
 #include "lcd_CN.h"
+#include "lcd.h"
+#include "inte.h"
+#include "led.h"
+#include "dma.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
 #include <string.h>
-#
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

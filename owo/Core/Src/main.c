@@ -19,9 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "tim.h"
-#include "usart.h"
-#include "gpio.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -46,7 +44,7 @@ extern uc16 ZN16x16_Table[];
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t receiveData[10000];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -64,6 +62,7 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
+
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -81,7 +80,7 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
-
+	
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -89,10 +88,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM3_Init();
+	MX_DMA_Init();
+  MX_USART1_UART_Init();
+  
+  MX_USART2_UART_Init();
 	LCD_Init();
 	LCD_Clear(White);
-  MX_USART1_UART_Init();
-  MX_USART2_UART_Init();
+	
+	//HAL_UARTEx_ReceiveToIdle_DMA(&huart1,receiveData,100);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -102,31 +105,16 @@ int main(void)
 	int now=1,ypos=159;
 	char tmp[]="     202230222023       ";
 	char ovo[]="Hello World               ";
-	uint8_t receiveDate[100];
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,receiveData,10000);
+	
   while (1){
 		//LCD_Clear(White);
-		cout(Line1,ypos);
+		//cout(Line1,ypos);
+		//HAL_UART_Transmit_DMA(&huart1,"R1",2);
 		ypos-=16;
 		if(ypos<0)ypos=319;
-		//LCD_DisplayStringLine(Line7,(uint8_t*)tmp);
-		//char t=tmp[19];
-		//for(int i=19;i>0;i--)tmp[i]=tmp[i-1];
-		//tmp[0]=t;
-		//now>>=1;
-		//if(now==0)now=1<<7;
-		//ctrl(now);
-		HAL_UART_Receive(&huart1,receiveDate,12,HAL_MAX_DELAY);
-		for(int i=0;i<12;i++)ovo[i]=receiveDate[12-i-1];
-		HAL_UART_Transmit(&huart1,receiveDate,12,100);
-		LCD_DisplayStringLine(Line3,(uint8_t*)ovo);
-		now=0;
-		now|=(ovo[0]-'0');
-		now|=(ovo[1]-'0')<<4;
-		ctrl(now);
-		//HAL_Delay(1000);
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+		
+		//HAL_UART_Transmit(&huart1,receiveData,2,100000);
   }
   /* USER CODE END 3 */
 }

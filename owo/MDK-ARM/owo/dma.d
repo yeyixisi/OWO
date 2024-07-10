@@ -1,4 +1,4 @@
-owo/lcd_cn.o: ..\oWo\lcd_CN.c ..\oWo\lcd_CN.h ..\Core\Inc\main.h \
+owo/dma.o: ..\Core\Src\dma.c ..\Core\Inc\dma.h ..\Core\Inc\main.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
   ..\Core\Inc\stm32g4xx_hal_conf.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h \
@@ -32,7 +32,7 @@ owo/lcd_cn.o: ..\oWo\lcd_CN.c ..\oWo\lcd_CN.h ..\Core\Inc\main.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim_ex.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
-  ..\oWo\lcd_CN.h ..\oWo\lcd.h ..\oWo\inte.h ..\oWo\led.h \
-  ..\Core\Inc\dma.h ..\Core\Inc\main.h ..\Core\Inc\tim.h \
+  ..\oWo\lcd_CN.h ..\Core\Inc\main.h ..\oWo\lcd.h ..\oWo\lcd.h \
+  ..\oWo\inte.h ..\oWo\led.h ..\Core\Inc\dma.h ..\Core\Inc\tim.h \
   ..\Core\Inc\usart.h ..\Core\Inc\gpio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h ..\oWo\lcd.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h

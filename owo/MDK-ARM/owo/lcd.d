@@ -32,5 +32,7 @@ owo/lcd.o: ..\oWo\lcd.c ..\oWo\lcd.h ..\Core\Inc\main.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim_ex.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
-  ..\oWo\led.h ..\oWo\inte.h ..\oWo\lcd.h ..\oWo\lcd_CN.h \
+  ..\oWo\lcd_CN.h ..\oWo\lcd.h ..\oWo\inte.h ..\oWo\led.h \
+  ..\Core\Inc\dma.h ..\Core\Inc\main.h ..\Core\Inc\tim.h \
+  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h ..\oWo\fonts.h
