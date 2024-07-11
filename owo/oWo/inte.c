@@ -10,13 +10,11 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
 		}
 		
 		
-		//RES_Write(Size);
-		//for(int i=0;i<1;i++)ee_write(i+1,tmp[i]);
-		//for(int i=0;i<1;i++)tmp[i]=ee_read(i+1);LCD_DisplayStringLine(Line0,tmp);
-		//ee_write(20,Size);
-		uchar Lcd_Disp_String[20];
-		sprintf((char *)Lcd_Disp_String, " R=%d     ",ee_read(1));
-		LCD_DisplayStringLine(Line7,Lcd_Disp_String);
+		RES_Write(Size);
+		for(int i=0;i<Size;i++)ee_write(i+1,tmp[i]);
+		for(int i=0;i<Size;i++)tmp[i]=ee_read(i+1);
+		LCD_DisplayStringLine(Line0,tmp);
+		ee_write(20,Size);
 		ctrl(Size);
 	
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,redat,100);

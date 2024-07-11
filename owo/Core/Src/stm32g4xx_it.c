@@ -60,7 +60,6 @@ extern TIM_HandleTypeDef htim3;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern UART_HandleTypeDef huart1;
-extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -209,6 +208,16 @@ void SysTick_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
+	uint8_t dat[20];
+	uint8_t Lcd_Disp_String[20];
+	int si=ee_read(20);
+	for(int i=0;i<20;i++)if(i<si)dat[i]=ee_read(i+1);else dat[i]=' ';
+	dat[si+2]=si;
+	dat[si+3]='V';
+	HAL_UART_Transmit_DMA(&huart1,dat,si);
+	LCD_DisplayStringLine(Line3,dat);
+	sprintf((char *)Lcd_Disp_String, "PB14V:%6.3fV",3.3*((0.7874*si)/(0.7874*si+10)));
+		LCD_DisplayStringLine(Line5, Lcd_Disp_String);	
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
@@ -293,20 +302,6 @@ void USART1_IRQHandler(void)
   /* USER CODE BEGIN USART1_IRQn 1 */
 
   /* USER CODE END USART1_IRQn 1 */
-}
-
-/**
-  * @brief This function handles USART2 global interrupt / USART2 wake-up interrupt through EXTI line 26.
-  */
-void USART2_IRQHandler(void)
-{
-  /* USER CODE BEGIN USART2_IRQn 0 */
-
-  /* USER CODE END USART2_IRQn 0 */
-  HAL_UART_IRQHandler(&huart2);
-  /* USER CODE BEGIN USART2_IRQn 1 */
-
-  /* USER CODE END USART2_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

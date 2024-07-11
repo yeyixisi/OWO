@@ -8,7 +8,7 @@ owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h
 owo\usart.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h
 owo\usart.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h
 owo\usart.o: ../Drivers/CMSIS/Include/core_cm4.h
-owo\usart.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stdint.h
+owo\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 owo\usart.o: ../Drivers/CMSIS/Include/cmsis_version.h
 owo\usart.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 owo\usart.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,13 +16,16 @@ owo\usart.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 owo\usart.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-owo\usart.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stddef.h
+owo\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h
+owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_adc.h
+owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_ll_adc.h
+owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_adc_ex.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h
 owo\usart.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h
@@ -43,4 +46,4 @@ owo\usart.o: ../Core/Inc/dma.h
 owo\usart.o: ../Core/Inc/tim.h
 owo\usart.o: ../Core/Inc/gpio.h
 owo\usart.o: ..\oWo\i2c.h
-owo\usart.o: D:\keil_5\ARM\ARMCC\Bin\..\include\string.h
+owo\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

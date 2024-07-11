@@ -261,12 +261,14 @@ uchar ee_read(uchar addr){
 	I2CSendByte(addr);
 	I2CWaitAck();
 	I2CStop();
+	HAL_Delay(5);
 	I2CStart();
 	I2CSendByte(0xa1);
 	I2CWaitAck();
 	uchar dat = I2CReceiveByte();
 	I2CSendNotAck();
 	I2CStop();
+	HAL_Delay(5);
 	return dat;
 }
 void ee_write(uchar addr,uchar dat){
@@ -278,6 +280,7 @@ void ee_write(uchar addr,uchar dat){
 	I2CSendByte(dat);
 	I2CWaitAck();
 	I2CStop();
+	HAL_Delay(10);
 }
 void RES_Write(uint8_t value)
 {
