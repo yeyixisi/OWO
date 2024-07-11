@@ -19,12 +19,15 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "dma.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-extern struct keys key[];
 extern uc16 ZN16x16_Table[];
+uchar Lcd_Disp_String[20];
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +47,7 @@ extern uc16 ZN16x16_Table[];
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t receiveData[10000];
+uint8_t redat[10000];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,7 +65,6 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
-
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -80,7 +82,7 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
-	
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -88,33 +90,34 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM3_Init();
+  MX_USART1_UART_Init();
+  MX_DMA_Init();
+  MX_USART2_UART_Init();
+  /* USER CODE BEGIN 2 */
+	MX_GPIO_Init();
+  //MX_TIM3_Init();
 	MX_DMA_Init();
   MX_USART1_UART_Init();
-  
-  MX_USART2_UART_Init();
+  //MX_USART2_UART_Init();
 	LCD_Init();
 	LCD_Clear(White);
-	
-	//HAL_UARTEx_ReceiveToIdle_DMA(&huart1,receiveData,100);
-  /* USER CODE BEGIN 2 */
-
+	I2CInit();
+	//HAL_UARTEx_ReceiveToIdle_DMA(&huart1,redat,10000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	int now=1,ypos=159;
-	char tmp[]="     202230222023       ";
-	char ovo[]="Hello World               ";
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,receiveData,10000);
+	uchar RES_4017=RES_Read();
 	
-  while (1){
-		//LCD_Clear(White);
-		//cout(Line1,ypos);
-		//HAL_UART_Transmit_DMA(&huart1,"R1",2);
-		ypos-=16;
-		if(ypos<0)ypos=319;
-		
-		//HAL_UART_Transmit(&huart1,receiveData,2,100000);
+  while (1)
+  {HAL_UART_Transmit_DMA(&huart1,"qeqe",4);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+		sprintf((char *)Lcd_Disp_String, "RES_K:%5.2fK",0.7874*RES_4017);
+	LCD_DisplayStringLine(Line1, Lcd_Disp_String);	
+	sprintf((char *)Lcd_Disp_String, "PB14V:%6.3fV",3.3*((0.7874*RES_4017)/(0.7874*RES_4017+10)));
+	LCD_DisplayStringLine(Line2, Lcd_Disp_String);	
   }
   /* USER CODE END 3 */
 }

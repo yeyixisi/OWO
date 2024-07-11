@@ -1,38 +1,47 @@
-owo/lcd.o: ..\oWo\lcd.c ..\oWo\lcd.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
-  ..\Core\Inc\stm32g4xx_hal_conf.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_def.h \
-  ..\Drivers\CMSIS\Device\ST\STM32G4xx\Include\stm32g4xx.h \
-  ..\Drivers\CMSIS\Device\ST\STM32G4xx\Include\stm32g431xx.h \
-  ..\Drivers\CMSIS\Include\core_cm4.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  ..\Drivers\CMSIS\Include\cmsis_version.h \
-  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
-  ..\Drivers\CMSIS\Include\cmsis_armclang.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
-  ..\Drivers\CMSIS\Include\mpu_armv7.h \
-  ..\Drivers\CMSIS\Device\ST\STM32G4xx\Include\system_stm32g4xx.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_gpio.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_gpio_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_dma.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_dma_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_cortex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_exti.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_flash_ramfunc.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pwr.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_pwr_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_tim_ex.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
-  ..\oWo\lcd_CN.h ..\oWo\lcd.h ..\oWo\inte.h ..\oWo\led.h \
-  ..\Core\Inc\dma.h ..\Core\Inc\main.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h ..\oWo\fonts.h
+owo\lcd.o: ..\oWo\lcd.c
+owo\lcd.o: ..\oWo\lcd.h
+owo\lcd.o: ../Core/Inc/main.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
+owo\lcd.o: ../Core/Inc/stm32g4xx_hal_conf.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h
+owo\lcd.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h
+owo\lcd.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h
+owo\lcd.o: ../Drivers/CMSIS/Include/core_cm4.h
+owo\lcd.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stdint.h
+owo\lcd.o: ../Drivers/CMSIS/Include/cmsis_version.h
+owo\lcd.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+owo\lcd.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+owo\lcd.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+owo\lcd.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+owo\lcd.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stddef.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma_ex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_cortex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_exti.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_flash_ramfunc.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h
+owo\lcd.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h
+owo\lcd.o: ..\oWo\lcd_CN.h
+owo\lcd.o: ../Core/Inc/main.h
+owo\lcd.o: ..\oWo\lcd.h
+owo\lcd.o: ..\oWo\inte.h
+owo\lcd.o: ../Core/Inc/usart.h
+owo\lcd.o: ..\oWo\led.h
+owo\lcd.o: ../Core/Inc/dma.h
+owo\lcd.o: ../Core/Inc/tim.h
+owo\lcd.o: ../Core/Inc/gpio.h
+owo\lcd.o: ..\oWo\i2c.h
+owo\lcd.o: D:\keil_5\ARM\ARMCC\Bin\..\include\string.h
+owo\lcd.o: ..\oWo\fonts.h

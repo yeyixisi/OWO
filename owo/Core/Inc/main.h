@@ -29,6 +29,9 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 #include "lcd_CN.h"
 #include "lcd.h"
 #include "inte.h"
@@ -37,10 +40,9 @@ extern "C" {
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "i2c.h"
 #include <string.h>
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
+#define uchar unsigned char
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
