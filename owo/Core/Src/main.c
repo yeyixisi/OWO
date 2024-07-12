@@ -133,7 +133,7 @@ int main(void)
 		if(day<1)day=1;
 		if(mouth==13)year++,mouth=1;
 		if(mouth==0)mouth=1;
-		sprintf((char *)Lcd_Disp_String, "year:%d mouth:%d",year,mouth);
+		sprintf((char *)Lcd_Disp_String, "year:%d mouth:%d  ",year,mouth);
 		LCD_DisplayStringLine(Line0, Lcd_Disp_String);	
 		sprintf((char *)Lcd_Disp_String, "day:%d week:%d",day,week);
 		LCD_DisplayStringLine(Line1, Lcd_Disp_String);	
@@ -148,6 +148,22 @@ int main(void)
 			else ctrl(0);
 		}
 		else ctrl(0);
+		cout(Line9,319,13);
+		cout(Line9,303,14);
+		cout(Line9,319-2*16,15);
+		if(mouth>10){
+			cout(Line9,319-3*16,10);
+			cout(Line9,319-4*16,mouth%10);
+		}
+		else cout(Line9,319-3*16,mouth);
+		cout(Line9,319-5*16,12);
+		if(day==20)cout(Line9,319-10*16,2),cout(Line9,319-11*16,10);
+		else {
+			if(day<=10)cout(Line9,319-10*16,0);
+			else if(day>20)cout(Line9,319-10*16,11);
+			else cout(Line9,319-10*16,10);
+			cout(Line9,319-11*16,day%10);
+		}
   }
   /* USER CODE END 3 */
 }

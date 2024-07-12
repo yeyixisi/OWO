@@ -7,7 +7,7 @@ owo\stm32g4xx_hal_msp.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g431xx.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Include/core_cm4.h
-owo\stm32g4xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+owo\stm32g4xx_hal_msp.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stdint.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Include/cmsis_version.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/CMSIS/Device/ST/STM32G4xx/Include/system_stm32g4xx.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-owo\stm32g4xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+owo\stm32g4xx_hal_msp.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stddef.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc_ex.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h
 owo\stm32g4xx_hal_msp.o: ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio_ex.h
@@ -46,5 +46,5 @@ owo\stm32g4xx_hal_msp.o: ../Core/Inc/tim.h
 owo\stm32g4xx_hal_msp.o: ../Core/Inc/gpio.h
 owo\stm32g4xx_hal_msp.o: ..\oWo\i2c.h
 owo\stm32g4xx_hal_msp.o: ..\oWo\badc.h
-owo\stm32g4xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-owo\stm32g4xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+owo\stm32g4xx_hal_msp.o: D:\keil_5\ARM\ARMCC\Bin\..\include\string.h
+owo\stm32g4xx_hal_msp.o: D:\keil_5\ARM\ARMCC\Bin\..\include\stdio.h
