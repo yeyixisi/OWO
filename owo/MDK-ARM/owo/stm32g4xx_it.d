@@ -45,5 +45,7 @@ owo\stm32g4xx_it.o: ../Core/Inc/dma.h
 owo\stm32g4xx_it.o: ../Core/Inc/tim.h
 owo\stm32g4xx_it.o: ../Core/Inc/gpio.h
 owo\stm32g4xx_it.o: ..\oWo\i2c.h
+owo\stm32g4xx_it.o: ..\oWo\badc.h
 owo\stm32g4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+owo\stm32g4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 owo\stm32g4xx_it.o: ../Core/Inc/stm32g4xx_it.h

@@ -46,4 +46,6 @@ owo\led.o: ../Core/Inc/dma.h
 owo\led.o: ../Core/Inc/tim.h
 owo\led.o: ../Core/Inc/gpio.h
 owo\led.o: ..\oWo\i2c.h
+owo\led.o: ..\oWo\badc.h
 owo\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+owo\led.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

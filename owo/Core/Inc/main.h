@@ -41,7 +41,9 @@ extern "C" {
 #include "usart.h"
 #include "gpio.h"
 #include "i2c.h"
+#include "badc.h"
 #include <string.h>
+#include <stdio.h>
 #define uchar unsigned char
 /* USER CODE END Includes */
 

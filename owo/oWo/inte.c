@@ -1,6 +1,7 @@
 #include "inte.h"
 #include "i2c.h"
 extern uint8_t redat[100];
+extern int s;
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
 		HAL_UART_Transmit_DMA(&huart1,redat,Size);
 		uint8_t tmp[20];
@@ -19,6 +20,9 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
 	
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart1,redat,100);
 		
+}
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	s++;
 }
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	HAL_UART_Transmit_DMA(&huart1,redat,2);

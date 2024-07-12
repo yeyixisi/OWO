@@ -93,25 +93,25 @@
       <flags>2</flags>
       <showCmd>3</showCmd>
       <MinPosition>
-        <xPos>-32000</xPos>
-        <yPos>-32000</yPos>
+        <xPos>-1</xPos>
+        <yPos>-1</yPos>
       </MinPosition>
       <MaxPosition>
         <xPos>-1</xPos>
         <yPos>-1</yPos>
       </MaxPosition>
       <NormalPosition>
-        <Top>200</Top>
-        <Left>242</Left>
-        <Right>1010</Right>
-        <Bottom>726</Bottom>
+        <Top>114</Top>
+        <Left>257</Left>
+        <Right>1025</Right>
+        <Bottom>902</Bottom>
       </NormalPosition>
     </WindowPosition>
     <MDIClientArea>
       <RegID>0</RegID>
       <MDITabState>
-        <Len>511</Len>
-        <Data>0100000004000000010000000100000001000000010000000000000002000000000000000100000001000000000000002800000028000000010000000700000000000000010000001A443A5C4F574F5C6F776F5C436F72655C5372635C6D61696E2E6300000000066D61696E2E6300000000C5D4F200FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C696E74652E680000000006696E74652E6800000000FFDC7800FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C696E74652E630000000006696E74652E6300000000BECEA100FFFFFFFF14443A5C4F574F5C6F776F5C6F576F5C6932632E6300000000056932632E6300000000F0A0A100FFFFFFFF22443A5C4F574F5C6F776F5C436F72655C5372635C73746D3332673478785F69742E63000000000E73746D3332673478785F69742E6300000000BCA8E100FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C626164632E680000000006626164632E68000000009CC1B600FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C626164632E630000000006626164632E6300000000F7B88600FFFFFFFF0100000010000000C5D4F200FFDC7800BECEA100F0A0A100BCA8E1009CC1B600F7B88600D9ADC200A5C2D700B3A6BE00EAD6A300F6FA7D00B5E99D005FC3CF00C1838300CACAD500010000000000000002000000B7000000650000000004000003020000</Data>
+        <Len>661</Len>
+        <Data>0100000004000000010000000100000001000000010000000000000002000000000000000100000001000000000000002800000028000000010000000900000000000000010000001A443A5C4F574F5C6F776F5C436F72655C5372635C6D61696E2E6300000000066D61696E2E6300000000C5D4F200FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C696E74652E680000000006696E74652E6800000000FFDC7800FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C696E74652E630000000006696E74652E6300000000BECEA100FFFFFFFF14443A5C4F574F5C6F776F5C6F576F5C6932632E6300000000056932632E6300000000F0A0A100FFFFFFFF22443A5C4F574F5C6F776F5C436F72655C5372635C73746D3332673478785F69742E63000000000E73746D3332673478785F69742E6300000000BCA8E100FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C626164632E680000000006626164632E68000000009CC1B600FFFFFFFF15443A5C4F574F5C6F776F5C6F576F5C626164632E630000000006626164632E6300000000F7B88600FFFFFFFF1A443A5C4F574F5C6F776F5C436F72655C496E635C6D61696E2E6800000000066D61696E2E6800000000D9ADC200FFFFFFFF3F443A5C4F574F5C6F776F5C447269766572735C53544D3332473478785F48414C5F4472697665725C496E635C73746D3332673478785F68616C5F74696D2E68000000001373746D3332673478785F68616C5F74696D2E6800000000A5C2D700FFFFFFFF0100000010000000C5D4F200FFDC7800BECEA100F0A0A100BCA8E1009CC1B600F7B88600D9ADC200A5C2D700B3A6BE00EAD6A300F6FA7D00B5E99D005FC3CF00C1838300CACAD500010000000000000002000000B7000000650000000004000003020000</Data>
       </MDITabState>
     </MDIClientArea>
     <ViewEx>
@@ -1865,27 +1865,27 @@
       <ActiveTab>0</ActiveTab>
       <Doc>
         <Name>../Core/Src/main.c</Name>
-        <ColumnNumber>67</ColumnNumber>
-        <TopLine>106</TopLine>
-        <CurrentLine>119</CurrentLine>
+        <ColumnNumber>17</ColumnNumber>
+        <TopLine>130</TopLine>
+        <CurrentLine>150</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
       </Doc>
       <Doc>
         <Name>..\oWo\inte.h</Name>
-        <ColumnNumber>4</ColumnNumber>
+        <ColumnNumber>60</ColumnNumber>
         <TopLine>1</TopLine>
-        <CurrentLine>4</CurrentLine>
+        <CurrentLine>7</CurrentLine>
         <Folding>0</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
       </Doc>
       <Doc>
         <Name>..\oWo\inte.c</Name>
-        <ColumnNumber>0</ColumnNumber>
-        <TopLine>4</TopLine>
-        <CurrentLine>18</CurrentLine>
+        <ColumnNumber>19</ColumnNumber>
+        <TopLine>6</TopLine>
+        <CurrentLine>10</CurrentLine>
         <Folding>0</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
@@ -1901,15 +1901,15 @@
       </Doc>
       <Doc>
         <Name>../Core/Src/stm32g4xx_it.c</Name>
-        <ColumnNumber>31</ColumnNumber>
-        <TopLine>199</TopLine>
-        <CurrentLine>220</CurrentLine>
+        <ColumnNumber>36</ColumnNumber>
+        <TopLine>250</TopLine>
+        <CurrentLine>267</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
       </Doc>
       <Doc>
-        <Name>D:\OWO\owo\oWo\badc.h</Name>
+        <Name>..\oWo\badc.h</Name>
         <ColumnNumber>38</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>4</CurrentLine>
@@ -1922,6 +1922,24 @@
         <ColumnNumber>36</ColumnNumber>
         <TopLine>1</TopLine>
         <CurrentLine>2</CurrentLine>
+        <Folding>1</Folding>
+        <ContractedFolders></ContractedFolders>
+        <PaneID>0</PaneID>
+      </Doc>
+      <Doc>
+        <Name>../Core/Inc/main.h</Name>
+        <ColumnNumber>17</ColumnNumber>
+        <TopLine>28</TopLine>
+        <CurrentLine>44</CurrentLine>
+        <Folding>1</Folding>
+        <ContractedFolders></ContractedFolders>
+        <PaneID>0</PaneID>
+      </Doc>
+      <Doc>
+        <Name>../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h</Name>
+        <ColumnNumber>0</ColumnNumber>
+        <TopLine>2526</TopLine>
+        <CurrentLine>2531</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>

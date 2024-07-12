@@ -27,7 +27,14 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+extern int tr;
+extern int s;
+extern int minute;
+extern int hour;
+extern int day;
+extern int mouth;
+extern int year;
+extern int week;
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -57,6 +64,7 @@
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim15;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern UART_HandleTypeDef huart1;
@@ -208,16 +216,18 @@ void SysTick_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
-	uint8_t dat[20];
-	uint8_t Lcd_Disp_String[20];
-	int si=ee_read(20);
-	for(int i=0;i<20;i++)if(i<si)dat[i]=ee_read(i+1);else dat[i]=' ';
-	dat[si+2]=si;
-	dat[si+3]='V';
-	HAL_UART_Transmit_DMA(&huart1,dat,si);
-	LCD_DisplayStringLine(Line3,dat);
-	sprintf((char *)Lcd_Disp_String, "PB14V:%6.3fV",3.3*((0.7874*si)/(0.7874*si+10)));
-		LCD_DisplayStringLine(Line5, Lcd_Disp_String);	
+//	uint8_t dat[20];
+//	uint8_t Lcd_Disp_String[20];
+//	uint8_t si=ee_read(20);
+//	for(int i=0;i<20;i++)if(i<si)dat[i]=ee_read(i+1);else dat[i]=' ';
+//	HAL_UART_Transmit(&huart1,dat,20,100);
+//	LCD_DisplayStringLine(Line3,dat);
+//	sprintf((char *)Lcd_Disp_String, "LASTPB14V:%6.3fV   ",3.3*((0.7874*si)/(0.7874*si+10)));
+//	LCD_DisplayStringLine(Line5, Lcd_Disp_String);
+//	HAL_UART_Transmit(&huart1,Lcd_Disp_String,20,100);	
+	HAL_Delay(10);
+	if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)==GPIO_PIN_RESET)
+	tr++;
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
   /* USER CODE BEGIN EXTI0_IRQn 1 */
@@ -231,21 +241,55 @@ void EXTI0_IRQHandler(void)
 void EXTI1_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI1_IRQn 0 */
-	LCD_Clear(White);
-	LCD_DisplayStringLine(Line0,(uint8_t*)"   I am a low-level interrupt.    ");
-	int now=1,t=60;
-	while(t--){
-		ctrl(now);
-		now<<=1;
-		HAL_Delay(100);
-		if(now>>8&1)now=1;
+//	LCD_Clear(White);
+//	LCD_DisplayStringLine(Line0,(uint8_t*)"   I am a low-level interrupt.    ");
+//	int now=1,t=60;
+//	while(t--){
+//		ctrl(now);
+//		now<<=1;
+//		HAL_Delay(100);
+//		if(now>>8&1)now=1;
+//	}
+	HAL_Delay(10);
+	if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_1)==GPIO_PIN_RESET)
+	{
+		if(tr==0)s++;
+		if(tr==1)minute++;
+		if(tr==2)hour++;
+		if(tr==3)day++;
+		if(tr==4)mouth++;
+		if(tr==5)year++;
+		if(tr==6)week++;
 	}
   /* USER CODE END EXTI0_IRQn 0 */
   /* USER CODE END EXTI1_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
   /* USER CODE BEGIN EXTI1_IRQn 1 */
-	LCD_Clear(White);
   /* USER CODE END EXTI1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line2 interrupt.
+  */
+void EXTI2_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI2_IRQn 0 */
+HAL_Delay(10);
+	if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_2)==GPIO_PIN_RESET)
+	{
+		if(tr==0)s--;
+		if(tr==1)minute--;
+		if(tr==2)hour--;
+		if(tr==3)day--;
+		if(tr==4)mouth--;
+		if(tr==5)year--;
+		if(tr==6)week--;
+	}
+  /* USER CODE END EXTI2_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  /* USER CODE BEGIN EXTI2_IRQn 1 */
+
+  /* USER CODE END EXTI2_IRQn 1 */
 }
 
 /**
@@ -274,6 +318,20 @@ void DMA1_Channel2_IRQHandler(void)
   /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
 
   /* USER CODE END DMA1_Channel2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM1 break interrupt and TIM15 global interrupt.
+  */
+void TIM1_BRK_TIM15_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM1_BRK_TIM15_IRQn 0 */
+
+  /* USER CODE END TIM1_BRK_TIM15_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim15);
+  /* USER CODE BEGIN TIM1_BRK_TIM15_IRQn 1 */
+
+  /* USER CODE END TIM1_BRK_TIM15_IRQn 1 */
 }
 
 /**

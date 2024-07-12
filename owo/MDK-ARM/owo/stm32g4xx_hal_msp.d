@@ -45,4 +45,6 @@ owo\stm32g4xx_hal_msp.o: ../Core/Inc/dma.h
 owo\stm32g4xx_hal_msp.o: ../Core/Inc/tim.h
 owo\stm32g4xx_hal_msp.o: ../Core/Inc/gpio.h
 owo\stm32g4xx_hal_msp.o: ..\oWo\i2c.h
+owo\stm32g4xx_hal_msp.o: ..\oWo\badc.h
 owo\stm32g4xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+owo\stm32g4xx_hal_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -24,7 +24,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "badc.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 extern uc16 ZN16x16_Table[];
@@ -49,6 +49,9 @@ uchar Lcd_Disp_String[20];
 
 /* USER CODE BEGIN PV */
 uint8_t redat[10000];
+int year=2024,mouth=7,day=12,week=5,hour=12,minute=5,s=0,tr=0;
+int d[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
+char* st[]={{"s"},{"minute"},{"hour"},{"day"},{"mouth"},{"year"},{"week"}};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,12 +98,14 @@ int main(void)
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
   //MX_USART2_UART_Init();
 	LCD_Init();
 	LCD_Clear(White);
 	I2CInit();
 	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,redat,10000);
+	HAL_TIM_Base_Start_IT(&htim15);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,15 +116,38 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		uchar RES_4017=RES_Read();
-		sprintf((char *)Lcd_Disp_String, "RES_K:%5.2fK",0.7874*RES_4017);
+		if(tr==7)tr=0;
+		if(s==60)minute++,s=0;
+		if(s<0)s=0;
+		if(minute==60)hour++,minute=0;
+		if(minute<0)minute=0;
+		if(hour==24)day++,hour=0,week++;
+		if(hour<0)hour=0;
+		int y=year%100;
+		int c=year/100;
+		int m=mouth>=3?mouth:mouth+12;
+		int da=day;
+		week=y+(y/4)+(c/4)-2*c+(26*(m+1)/10)+da-1;
+		week=(week-1)%7+1;
+		if(day==d[mouth]+1)mouth++,day=1;
+		if(day<1)day=1;
+		if(mouth==13)year++,mouth=1;
+		if(mouth==0)mouth=1;
+		sprintf((char *)Lcd_Disp_String, "year:%d mouth:%d",year,mouth);
+		LCD_DisplayStringLine(Line0, Lcd_Disp_String);	
+		sprintf((char *)Lcd_Disp_String, "day:%d week:%d",day,week);
 		LCD_DisplayStringLine(Line1, Lcd_Disp_String);	
-		sprintf((char *)Lcd_Disp_String, "PB14V:%6.3fV",3.3*((0.7874*RES_4017)/(0.7874*RES_4017+10)));
+		sprintf((char *)Lcd_Disp_String, "hour:%d minte:%d s:%d ",hour,minute,s);
+		LCD_DisplayStringLine(Line7, Lcd_Disp_String);	
+		sprintf((char *)Lcd_Disp_String, "change:%s   ",st[tr]);
 		LCD_DisplayStringLine(Line2, Lcd_Disp_String);	
-		sprintf((char *)Lcd_Disp_String, "    V:=%.2fV",getADC(&hadc1));
-		LCD_DisplayStringLine(Line6, Lcd_Disp_String);	
-		sprintf((char *)Lcd_Disp_String, "    V:=%.2fV",getADC(&hadc2));
-		LCD_DisplayStringLine(Line7, Lcd_Disp_String);
+		sprintf((char *)Lcd_Disp_String, "clock:%d  %d ",(int)(getADC(&hadc1)*10),(int)(getADC(&hadc2)*10));
+		LCD_DisplayStringLine(Line5, Lcd_Disp_String);	
+		if(mouth==(int)(getADC(&hadc1)*10)&&day==(int)(getADC(&hadc2)*10)){
+			if(s&1)ctrl(0xff);
+			else ctrl(0);
+		}
+		else ctrl(0);
   }
   /* USER CODE END 3 */
 }

@@ -46,4 +46,6 @@ owo\lcd_cn.o: ../Core/Inc/dma.h
 owo\lcd_cn.o: ../Core/Inc/tim.h
 owo\lcd_cn.o: ../Core/Inc/gpio.h
 owo\lcd_cn.o: ..\oWo\i2c.h
+owo\lcd_cn.o: ..\oWo\badc.h
 owo\lcd_cn.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+owo\lcd_cn.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
